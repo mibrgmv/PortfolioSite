@@ -43,8 +43,8 @@ body {
 /* -----footer----- */
 
 footer {
-    display: flex;flex-direction: column;
-
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -54,11 +54,22 @@ footer {
 }
 
 footer > div {
+}
+
+#footer-links {
+    display: flex;
+    justify-content: center;
+}
+
+#footer-links ul {
+    list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 #footer-links > ul > li {
     display: inline;
+    margin: 0 10px;
 }
 
 /* -----links----- */
