@@ -3,56 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Code Example</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <section>
-            <nav class="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./portfolio.html">Portfolio</a></li>
-                    <li><a href="./feedback.html">Contact</a></li>
-                </ul>
-            </nav>
-        </section>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./portfolio.html">Portfolio</a></li>
+                <li><a href="./feedback.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        Решение задачи Leetcode 141. Linked List Cycle на Java:
-        <pre>
-            <code>
-public class Solution {
-    public boolean hasCycle(ListNode head) {
-        if (head == null) {
-            return false;
-        }
-
-        ListNode slow = head;
-        ListNode fast = head;
-
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-
-            if (slow == fast) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-}
-            </code>
-        </pre>
+        <div id="portfolio">
+            <h1 id="portfolio-heading">My Projects</h1>
+            <div class="my-projects">
+                <div class="project">
+                    <h2>Project 1</h2>
+                    <p>Description</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div class="project">
+                    <h2>Project 2</h2>
+                    <p>Description</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div class="project">
+                    <h2>Project 3</h2>
+                    <p>Description</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div class="project">
+                    <h2>Project 4</h2>
+                    <p>Description</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div class="project">
+                    <h2>Project 5</h2>
+                    <p>Description</p>
+                    <a href="#">learn more</a>
+                </div>
+                <div class="project">
+                    <h2>Project 6</h2>
+                    <p>Description</p>
+                    <a href="#">learn more</a>
+                </div>
+            </div>
+        </div>
     </main>
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="https://github.com/mibrgmv">github</a></li>
+                <li><a href="https://leetcode.com/u/shmarik/">leetcode</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>&copy; marat ibragimov, 2024</p>
+        </div>
+    </footer>
 </body>
 </html>
