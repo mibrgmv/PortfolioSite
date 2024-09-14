@@ -9,23 +9,27 @@ body {
 
 /* -----main page----- */
 
-#index-main {
+.index-main {
     font-size: 19px;
 }
 
-.square-text > div {
+.panel {
+    position: relative;
+}
+
+.text-panel > div {
     margin-bottom: 40px;
 }
 
-.square-text > div > p {
+.text-panel > div > p {
     font-style: italic;
 }
 
-.square-text > div > h1, #index-main > div > h3 {
+.text-panel > div > h1, .index-main > div > h3 {
     margin-top: 0;
 }
 
-.square-text {
+.text-panel {
     position: absolute;
     top: 10vw;
     left: 10vw;
@@ -39,7 +43,7 @@ body {
     left: 10vw;
     width: 600px;
     height: 300px;
-    background-color: rgb(231, 51, 142);
+    background-color: rgb(230, 64, 71);
     z-index: -1;
 }
 
@@ -49,13 +53,13 @@ body {
     left: 12vw;
     width: 600px;
     height: 300px;
-    background-color: lawngreen;
+    background-color: rgb(190, 24, 31);
     z-index: -2;
 }
 
 /* -----portfolio----- */
 
-#portfolio-heading {
+#portfolio__heading {
     font-size: 24px;
     padding: 20px;
     text-align: center;
@@ -100,18 +104,18 @@ footer {
     right: 0;
 }
 
-#footer-links {
+.footer__links {
     display: flex;
     justify-content: center;
 }
 
-#footer-links ul {
+.footer__links ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-#footer-links > ul > li {
+.footer__links > ul > li {
     display: inline;
     margin: 0 10px;
 }
@@ -137,10 +141,20 @@ nav > ul {
 
 /* -----photo----- */
 
-#main-body {
+.index-body {
     height: 100vh;
     background-image: url("images/portrait.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
+}
+
+@media (max-width: 768px) {
+    .index-body {
+        background-image: none;
+    }
+
+    .my-projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
