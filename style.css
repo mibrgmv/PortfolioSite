@@ -7,9 +7,30 @@ body {
     color: rgb(223, 235, 241);
 }
 
+/* -----main page----- */
+
+#index-main {
+    margin-top: 20vh;
+    margin-left: 10vw;
+    font-size: 20px;
+}
+
+#index-main > div {
+    margin-top: 6%;
+}
+
+#index-main > div > p {
+    font-style: italic;
+}
+
+#index-main > div > h1, #index-main > div > h3 {
+    margin-top: 0;
+}
+
 /* -----portfolio----- */
 
 #portfolio-heading {
+    font-size: 24px;
     padding: 20px;
     text-align: center;
 }
@@ -93,7 +114,7 @@ nav > ul {
 
 /* -----photo----- */
 
-.main-body {
+#main-body {
     height: 100vh;
     background-image: url("images/portrait.png");
     background-size: contain;
