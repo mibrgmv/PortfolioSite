@@ -10,21 +10,47 @@ body {
 /* -----main page----- */
 
 #index-main {
-    margin-top: 20vh;
-    margin-left: 10vw;
-    font-size: 20px;
+    font-size: 19px;
 }
 
-#index-main > div {
-    margin-top: 6%;
+.square-text > div {
+    margin-bottom: 40px;
 }
 
-#index-main > div > p {
+.square-text > div > p {
     font-style: italic;
 }
 
-#index-main > div > h1, #index-main > div > h3 {
+.square-text > div > h1, #index-main > div > h3 {
     margin-top: 0;
+}
+
+.square-text {
+    position: absolute;
+    top: 10vw;
+    left: 10vw;
+    margin-left: 3vw;
+    z-index: 1;
+}
+
+.overlay-square {
+    position: absolute;
+    top: 9vw;
+    left: 10vw;
+    width: 600px;
+    height: 300px;
+    background-color: rgb(231, 51, 142);
+    z-index: -1;
+}
+
+.background-square {
+    position: absolute;
+    top: 11vw;
+    left: 12vw;
+    width: 600px;
+    height: 300px;
+    background-color: lawngreen;
+    z-index: -2;
 }
 
 /* -----portfolio----- */
@@ -68,13 +94,10 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-footer > div {
 }
 
 #footer-links {
