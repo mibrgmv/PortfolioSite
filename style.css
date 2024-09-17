@@ -2,9 +2,18 @@
     font-family: Andale Mono, monospace;
 }
 
+:root {
+    --yt: rgb(223, 235, 241);
+    --dark-grey: rgb(28, 29, 30);
+    --peach: rgb(230, 64, 71);
+    --dark-peach: rgb(190, 24, 31);
+}
+
 body {
+    margin: 0;
+    padding: 0;
     background-color: rgb(38, 39, 40);
-    color: rgb(223, 235, 241);
+    color: var(--yt);
 }
 
 /* -----main page----- */
@@ -15,6 +24,8 @@ body {
 
 .panel {
     position: relative;
+    display: flex;
+    margin: 5%;
 }
 
 .text-panel > div {
@@ -31,29 +42,25 @@ body {
 
 .text-panel {
     position: absolute;
-    top: 10vw;
-    left: 10vw;
     margin-left: 3vw;
     z-index: 1;
 }
 
-.overlay-square {
+.overlay-square, .background-square {
     position: absolute;
-    top: 9vw;
-    left: 10vw;
     width: 600px;
     height: 300px;
-    background-color: rgb(230, 64, 71);
+}
+
+.overlay-square {
+    background-color: var(--peach);
     z-index: -1;
 }
 
 .background-square {
-    position: absolute;
-    top: 11vw;
-    left: 12vw;
-    width: 600px;
-    height: 300px;
-    background-color: rgb(190, 24, 31);
+    top: 20px;
+    left: 20px;
+    background-color: var(--dark-peach);
     z-index: -2;
 }
 
@@ -74,7 +81,7 @@ body {
     margin: 8px;
     font-size: 14px;
     padding: 48px;
-    background-color: rgb(28, 29, 30);
+    background-color: var(--dark-grey);
 }
 
 .my-projects > div:nth-child(even) {
@@ -82,13 +89,40 @@ body {
 }
 
 .my-projects div a {
-    color: rgb(230, 64, 71);
+    color: var(--peach);
     text-decoration: underline;
 }
 
 .my-projects div a:hover {
-    color: rgb(223, 235, 241);
+    color: var(--yt);
     text-decoration: underline;
+}
+
+/* -----nav----- */
+
+nav ul {
+    display: flex;
+    background-color: var(--dark-grey);
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    top: 0;
+}
+
+nav ul li a {
+    color: var(--yt);
+    padding: 0 5vw;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--peach);
+    text-decoration: underline;
+}
+
+.active {
+    color: var(--peach);
 }
 
 /* -----footer----- */
@@ -120,23 +154,13 @@ footer {
     margin: 0 10px;
 }
 
-/* -----links----- */
-
-a {
-    color: rgb(223, 235, 241);
+.footer__links ul li a {
+    color: var(--yt);
     text-decoration: none;
 }
 
-a:hover {
+.footer__links ul li a:hover {
     color: rgb(67, 135, 228);
-}
-
-/* ---------------- */
-
-nav > ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
 }
 
 /* -----photo----- */
@@ -149,7 +173,9 @@ nav > ul {
     background-position: right;
 }
 
-@media (max-width: 768px) {
+/* -----@media----- */
+
+@media (max-width: 1000px) {
     .index-body {
         background-image: none;
     }
@@ -158,3 +184,10 @@ nav > ul {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media (max-width: 500px) {
+    .my-projects {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
