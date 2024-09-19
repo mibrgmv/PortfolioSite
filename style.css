@@ -18,13 +18,8 @@ body {
 
 /* -----main page----- */
 
-.index-main {
-    font-size: 19px;
-}
-
 .panel {
     position: relative;
-    display: flex;
     margin: 5%;
 }
 
@@ -136,11 +131,6 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-.footer__links {
-    display: flex;
-    justify-content: center;
 }
 
 .footer__links ul {
