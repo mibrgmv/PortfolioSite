@@ -21,9 +21,18 @@ body {
 
 /* -----main page----- */
 
+.index-main {
+    height: 100%;
+    margin: 40px 100px 10px;
+    background-image: url("images/portrait.png");
+    background-position: right bottom;
+    background-size: 600px;
+    background-repeat: no-repeat;
+}
+
 .panel {
     position: relative;
-    margin: 60px;
+    margin-bottom: 100px;
     padding: 20px;
     width: 500px;
     height: 250px;
@@ -140,26 +149,21 @@ footer li {
     color: rgb(67, 135, 228);
 }
 
-/* -----photo----- */
-
-.index-body {
-    height: 100vh;
-    margin-bottom: -37px;
-    background-position: right bottom;
-    background-image: url("images/portrait.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
 /* -----@media----- */
 
 @media (max-width: 1000px) {
-    .index-body {
+    .index-main {
         background-image: none;
     }
 
     .my-projects {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-height: 600px) {
+    .index-main {
+        background-image: none;
     }
 }
 
