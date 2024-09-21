@@ -23,44 +23,33 @@ body {
 
 .panel {
     position: relative;
-    margin: 5%;
+    margin: 60px;
+    padding: 20px;
+    width: 500px;
+    height: 250px;
+    background-color: var(--peach);
+    box-shadow: 20px 20px var(--dark-peach);
 }
 
-.text-panel > div {
-    margin-bottom: 40px;
-}
-
-.text-panel > div > p {
+.panel > div > p {
     font-style: italic;
 }
 
-.text-panel > div > h1, .index-main > div > h3 {
+.panel > div > h1, .index-main > div > h3 {
     margin-top: 0;
 }
 
-.text-panel {
-    position: absolute;
-    margin-left: 3vw;
-    z-index: 1;
-}
+/*.overlay-square {*/
+/*    position: absolute;*/
+/*    width: 600px;*/
+/*    height: 300px;*/
+/*}*/
 
-.overlay-square, .background-square {
-    position: absolute;
-    width: 600px;
-    height: 300px;
-}
-
-.overlay-square {
-    background-color: var(--peach);
-    z-index: -1;
-}
-
-.background-square {
-    top: 20px;
-    left: 20px;
-    background-color: var(--dark-peach);
-    z-index: -2;
-}
+/*.overlay-square {*/
+/*    box-shadow: 20px 20px var(--dark-peach);*/
+/*    background-color: var(--peach);*/
+/*    z-index: -1;*/
+/*}*/
 
 /* -----portfolio----- */
 
@@ -126,11 +115,12 @@ nav ul li a:hover {
 /* -----footer----- */
 
 footer {
-    margin: 20px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 60px;
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    background-color: var(--dark-grey);
 }
 
 .footer__links ul {
@@ -139,8 +129,8 @@ footer {
     padding: 0;
 }
 
-.footer__links > ul > li {
-    display: inline;
+.footer__links ul li {
+    display: inline-block;
     margin: 0 10px;
 }
 
@@ -157,10 +147,10 @@ footer {
 
 .index-body {
     height: 100vh;
+    background-position: right -80px;
     background-image: url("images/portrait.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right;
 }
 
 /* -----@media----- */
