@@ -23,16 +23,11 @@ body {
 
 .index-main {
     height: 100%;
-    margin: 40px 100px 10px;
-    background-image: url("images/portrait.png");
-    background-position: right bottom;
-    background-size: 600px;
-    background-repeat: no-repeat;
+    margin: 40px 100px 0;
 }
 
 .panel {
     position: relative;
-    margin-bottom: 100px;
     padding: 20px;
     width: 500px;
     height: 250px;
@@ -126,6 +121,10 @@ footer {
 
 footer div {
     margin: auto;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
 }
 
 footer ul {
@@ -140,12 +139,16 @@ footer li {
     margin: 0 10px 0 0;
 }
 
-.footer__links a {
+footer i {
+    font-size: initial;
+}
+
+footer a {
     color: var(--yt);
     text-decoration: none;
 }
 
-.footer__links a:hover {
+footer a:hover {
     color: rgb(67, 135, 228);
 }
 
