@@ -39,18 +39,6 @@ body {
     margin-top: 0;
 }
 
-/*.overlay-square {*/
-/*    position: absolute;*/
-/*    width: 600px;*/
-/*    height: 300px;*/
-/*}*/
-
-/*.overlay-square {*/
-/*    box-shadow: 20px 20px var(--dark-peach);*/
-/*    background-color: var(--peach);*/
-/*    z-index: -1;*/
-/*}*/
-
 /* -----portfolio----- */
 
 #portfolio__heading {
@@ -94,7 +82,6 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 20px;
-    top: 0;
 }
 
 nav ul li a {
@@ -115,31 +102,18 @@ nav ul li a:hover {
 /* -----footer----- */
 
 footer {
-    height: 60px;
-    padding: 10px;
-    margin: auto;
+    font-size: 14px;
     width: 100%;
-    text-align: center;
-    background-color: var(--dark-grey);
+    padding-left: 20px;
+    padding-bottom: 10px;
 }
 
-.footer__links ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer__links ul li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.footer__links ul li a {
+.footer__links a {
     color: var(--yt);
     text-decoration: none;
 }
 
-.footer__links ul li a:hover {
+.footer__links a:hover {
     color: rgb(67, 135, 228);
 }
 
@@ -147,7 +121,7 @@ footer {
 
 .index-body {
     height: 100vh;
-    background-position: right -80px;
+    background-position: right bottom;
     background-image: url("images/portrait.png");
     background-size: contain;
     background-repeat: no-repeat;
