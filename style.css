@@ -4,6 +4,7 @@
 
 :root {
     --yt: rgb(223, 235, 241);
+    --grey: rgb(38, 39, 40);
     --dark-grey: rgb(28, 29, 30);
     --peach: rgb(230, 64, 71);
     --dark-peach: rgb(190, 24, 31);
@@ -15,28 +16,45 @@ body {
     grid-template-rows: auto 1fr auto;
     margin: 0;
     padding: 0;
-    background-color: rgb(38, 39, 40);
+    background-color: var(--grey);
     color: var(--yt);
 }
 
 /* -----main page----- */
 
 .index-main {
-    height: 100%;
-    margin: 40px 100px 0;
+    background-image: url("images/portrait.png");
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
 }
 
-.panel {
+.index-main > div {
+    margin: 40px 100px;
     position: relative;
     padding: 20px;
+}
+
+.panel-info {
     width: 500px;
     height: 250px;
     background-color: var(--peach);
     box-shadow: 20px 20px var(--dark-peach);
 }
 
-.panel > div > p {
+.panel-info p {
     font-style: italic;
+}
+
+.button {
+    padding: 20px;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    color: var(--yt);
+    border: solid 1px var(--yt);
+    border-radius: 30px;
+    background-color: var(--grey);
 }
 
 /* -----about------ */
