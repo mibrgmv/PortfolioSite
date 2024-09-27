@@ -135,12 +135,12 @@ body {
 }
 
 #todo-list ul li {
+    position: relative;
     display: flex;
     word-break: break-word;
-    justify-content: space-between;
     list-style: none;
     font-size: 16px;
-    padding: 20px;
+    padding: 20px 25px 20px 20px;
     margin: 10px 0;
     background-color: var(--dark-grey);
     border-radius: 10px;
@@ -153,7 +153,10 @@ body {
 }
 
 #todo-list ul li span {
-    padding: 1px;
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    right: 0;
 }
 
 /* -----portfolio----- */

@@ -1,7 +1,7 @@
 const inputBox = document.getElementById("input-box")
 const listContainer = document.getElementById("task-list")
-const taskCount = document.getElementById("task-count"); // New element for task count
-const completedCount = document.getElementById("completed-count"); // New element for completed count
+const taskCount = document.getElementById("task-count");
+const completedCount = document.getElementById("completed-count");
 
 function updateCounts() {
     const allTasks = listContainer.querySelectorAll("li");
@@ -23,18 +23,18 @@ function addTask() {
     }
     inputBox.value = "";
     saveContent();
-    updateCounts(); // Call updateCounts after adding a task
+    updateCounts();
 }
 
 listContainer.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("crossed");
         saveContent();
-        updateCounts(); // Call updateCounts after toggling completion
+        updateCounts();
     } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveContent();
-        updateCounts(); // Call updateCounts after deleting a task
+        updateCounts();
     }
 }, false);
 
@@ -44,7 +44,7 @@ function saveContent() {
 
 function displayContent() {
     listContainer.innerHTML = localStorage.getItem("content");
-    updateCounts(); // Call updateCounts on initial display as well
+    updateCounts();
 }
 
 displayContent();
