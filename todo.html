@@ -24,10 +24,13 @@
 <main id="todo-main">
     <div id="todo-list">
         <div class="input-bar">
+            <input type="text" id="input-box" placeholder="Write your task">
             <button type="button" class="button" onclick="addTask()">
-                <span>&#43;</span>
+                <span>Add</span>
             </button>
-            <input type="text" id="input-box" placeholder="write your task">
+            <div class="counts">
+                <span id="completed-count">0</span>/<span id="task-count">0</span>
+            </div>
         </div>
         <div>
             <ul id="task-list">

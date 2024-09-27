@@ -94,14 +94,29 @@ body {
 #todo-list .input-bar {
     display: flex;
     border-bottom: solid 1px var(--yt);
-    padding: 0 30px 10px;
+}
+
+#todo-list button, .counts {
+    font-size: 14px;
+    padding: 6px 12px;
+    margin: 0 0 10px 10px;
+    color: var(--yt);
+    border: solid 1px var(--yt);
+    border-radius: 50px;
+    background-color: transparent;
+}
+
+#todo-list button:hover {
+    color: var(--grey);
+    background-color: var(--yt);
+    cursor: pointer;
 }
 
 #todo-list input {
-    font-size: 18px;
-    width: 100%;
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    width: 100%;
     color: var(--yt);
     outline: none;
     border: none;
@@ -109,21 +124,9 @@ body {
 }
 
 #todo-list button {
-    font-size: 18px;
-    padding: 0 15px 0 0;
-    margin: 0;
     outline: none;
-    border: none;
     color: var(--yt);
     background: none;
-}
-
-#todo-list button span {
-    font-size: 18px;
-}
-
-#todo-list button:hover {
-    cursor: pointer;
 }
 
 #todo-list ul {
@@ -136,10 +139,12 @@ body {
     word-break: break-word;
     justify-content: space-between;
     list-style: none;
+    font-size: 16px;
     padding: 20px;
-    margin: 15px 0;
-    border: solid 1px var(--yt);
+    margin: 10px 0;
+    background-color: var(--dark-grey);
     border-radius: 10px;
+    color: var(--yt);
     cursor: pointer;
 }
 
@@ -148,7 +153,7 @@ body {
 }
 
 #todo-list ul li span {
-    font-size: 18px;
+    padding: 1px;
 }
 
 /* -----portfolio----- */
@@ -291,4 +296,3 @@ footer a:hover {
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
