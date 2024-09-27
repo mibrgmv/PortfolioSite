@@ -133,6 +133,7 @@ body {
 
 #todo-list ul li {
     display: flex;
+    word-break: break-word;
     justify-content: space-between;
     list-style: none;
     padding: 20px;
