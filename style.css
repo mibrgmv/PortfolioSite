@@ -127,6 +127,8 @@ body {
 }
 
 #todo-list ul li {
+    display: flex;
+    justify-content: space-between;
     list-style: none;
     padding: 20px;
     margin: 15px 0;
@@ -135,12 +137,12 @@ body {
     cursor: pointer;
 }
 
-#todo-list ul li::before {
-    background-color: red;
-}
-
 #todo-list ul li.crossed {
     text-decoration: line-through;
+}
+
+#todo-list ul li span {
+    font-size: 18px;
 }
 
 /* -----portfolio----- */

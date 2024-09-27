@@ -8,7 +8,6 @@
     <title>To-do</title>
     <link rel="stylesheet" href="style.css">
     <script src="loadtime.js"></script>
-    <script src="todo.js"></script>
 </head>
 <body>
 <header>
@@ -25,17 +24,44 @@
 <main id="todo-main">
     <div id="todo-list">
         <div class="row">
-            <button type="button" class="button">add</button>
+            <button type="button" class="button" onclick="addTask()">add</button>
             <input type="text" id="input-box" placeholder="write your task">
         </div>
         <div>
-            <ul>
-                <li class="crossed">task 1</li>
-                <li>task 2</li>
-                <li>task 3</li>
+            <ul id="task-list">
+<!--                <li class="crossed">task 1</li>-->
+<!--                <li>task 2</li>-->
+<!--                <li>task 3</li>-->
             </ul>
         </div>
     </div>
+
+    <script>
+        const inputBox = document.getElementById("input-box")
+        const listContainer = document.getElementById("task-list")
+
+        function addTask() {
+            if (inputBox.value === '') {
+                alert("DUrAK")
+            } else {
+                let li = document.createElement("li");
+                li.innerHTML = inputBox.value;
+                listContainer.appendChild(li);
+                let span = document.createElement("span");
+                span.innerHTML = "\u00d7"
+                li.appendChild(span);
+            }
+            inputBox.value = "";
+        }
+
+        listContainer.addEventListener("click", function (e) {
+               if (e.target.tagName === "LI") {
+                   e.target.classList.toggle("crossed");
+               } else if (e.target.tagName === "SPAN") {
+                    e.target.parentElement.remove();
+               }
+        }, false);
+    </script>
 </main>
 
 <footer>
