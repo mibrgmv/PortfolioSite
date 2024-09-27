@@ -23,15 +23,14 @@
 
 <main id="todo-main">
     <div id="todo-list">
-        <div class="row">
-            <button type="button" class="button" onclick="addTask()">add</button>
+        <div class="input-bar">
+            <button type="button" class="button" onclick="addTask()">
+                <span>&#43;</span>
+            </button>
             <input type="text" id="input-box" placeholder="write your task">
         </div>
         <div>
             <ul id="task-list">
-<!--                <li class="crossed">task 1</li>-->
-<!--                <li>task 2</li>-->
-<!--                <li>task 3</li>-->
             </ul>
         </div>
     </div>
@@ -42,7 +41,7 @@
 
         function addTask() {
             if (inputBox.value === '') {
-                alert("DUrAK")
+                alert("empty task")
             } else {
                 let li = document.createElement("li");
                 li.innerHTML = inputBox.value;
@@ -52,15 +51,28 @@
                 li.appendChild(span);
             }
             inputBox.value = "";
+            saveContent();
         }
 
         listContainer.addEventListener("click", function (e) {
                if (e.target.tagName === "LI") {
                    e.target.classList.toggle("crossed");
+                   saveContent();
                } else if (e.target.tagName === "SPAN") {
                     e.target.parentElement.remove();
+                    saveContent();
                }
         }, false);
+
+        function saveContent() {
+            localStorage.setItem("content", listContainer.innerHTML);
+        }
+
+        function displayContent() {
+            listContainer.innerHTML = localStorage.getItem("content");
+        }
+
+        displayContent();
     </script>
 </main>
 

@@ -91,16 +91,17 @@ body {
     margin: 40px 40px;
 }
 
-.row {
+#todo-list .input-bar {
     display: flex;
     border-bottom: solid 1px var(--yt);
+    padding: 0 30px 10px;
 }
 
 #todo-list input {
     font-size: 18px;
     width: 100%;
-    padding: 0 0 10px 30px;
     margin: 0;
+    padding: 0;
     color: var(--yt);
     outline: none;
     border: none;
@@ -109,12 +110,16 @@ body {
 
 #todo-list button {
     font-size: 18px;
-    padding: 0 0 10px 30px;
+    padding: 0 15px 0 0;
     margin: 0;
     outline: none;
     border: none;
     color: var(--yt);
     background: none;
+}
+
+#todo-list button span {
+    font-size: 18px;
 }
 
 #todo-list button:hover {
