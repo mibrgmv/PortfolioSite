@@ -8,7 +8,6 @@
     <title>Main</title>
     <link rel="stylesheet" href="../style.css">
     <script src="../js/download.js"></script>
-    <script src="../js/loadtime.js"></script>
 </head>
 <body class="index-body">
     <header>
@@ -48,6 +47,19 @@
                 <li><span id="loadTime"></span></li>
             </ul>
         </div>
+        <script>
+            (function () {
+                const startTime = performance.now();
+
+                window.addEventListener('load', () => {
+                    const endTime = performance.now();
+                    const loadTime = endTime - startTime;
+
+                    const loadTimeElement = document.getElementById('loadTime');
+                    loadTimeElement.textContent = loadTime + 'ms';
+                });
+            })();
+        </script>
     </footer>
 </body>
 </html>
