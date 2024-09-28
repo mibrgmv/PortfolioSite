@@ -3,6 +3,31 @@ const listContainer = document.getElementById("task-list")
 const taskCount = document.getElementById("task-count");
 const completedCount = document.getElementById("completed-count");
 
+function showToast(message, type = 'error') {
+
+    if (document.getElementById("toast-container").hasChildNodes("toastik")) {
+        return;
+    }
+
+    const toast = document.createElement('div');
+    toast.className = "toastik"
+    toast.className = `
+    ${type === 'success' ? 'bg-green-500' : 'bg-red-500'}
+    text-white p-4 rounded-lg shadow-lg opacity-90 transition duration-300 mb-4
+    `;
+    toast.innerText = message;
+
+    const toastContainer = document.getElementById('toast-container');
+    toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add('opacity-0');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 3000);
+}
+
 function updateCounts() {
     const allTasks = listContainer.querySelectorAll("li");
     const completedTasks = listContainer.querySelectorAll("li.crossed");
@@ -12,7 +37,7 @@ function updateCounts() {
 
 function addTask() {
     if (inputBox.value === '') {
-        alert("empty task")
+        showToast('empty task', 'error');
     } else {
         let li = document.createElement("li");
         li.innerHTML = inputBox.value;

@@ -1,0 +1,18 @@
+{
+  "name": "portfoliosite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "todo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mibrgmv/PortfolioSite.git"
+  },
+  "private": true,
+  "dependencies": {
+    "mousetrap": "^1.6.5",
+    "spin.js": "^4.1.2"
+  }
+}

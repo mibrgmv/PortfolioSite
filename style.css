@@ -81,10 +81,15 @@ body {
     margin: 20px auto;
     width: 50px;
     height: 50px;
-    border: 5px solid var(--yt);
-    border-top: 5px solid var(--peach);
+    border: 5px solid var(--peach);
+    border-top: 5px solid transparent;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .comments-container {
@@ -124,11 +129,6 @@ body {
     margin-top: auto;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 /* -----about------ */
 
 .about-main {
@@ -141,7 +141,15 @@ body {
 
 /* -----to-do----- */
 
+#toast-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
 #todo-main {
+    position: relative;
     margin: 0 100px;
 }
 
