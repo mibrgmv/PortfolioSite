@@ -5,18 +5,25 @@ let filter = 100;
 function fetchComments() {
     preloader.style.display = 'block';
 
-    fetch(`https://jsonplaceholder.typicode.com/comments`)
+    fetch(`https://jsonplaceholder.typicode.com/comments?id_gte=${filter}`)
         .then(response => response.json())
         .then(data => {
             preloader.style.display = 'none';
             data.forEach(comment => {
                 const commentElement = document.createElement('div');
                 commentElement.classList.add('comment');
-                commentElement.textContent = `
-                    Name: ${comment.name}
-                    Email: ${comment.email}
-                    Comment: ${comment.body}
-                `;
+                const name = document.createElement('p');
+                name.innerHTML = `by ${comment.name}`;
+                name.classList.add('comment-name')
+                const email = document.createElement('p');
+                email.innerHTML = `at ${comment.email}`;
+                email.classList.add('comment-email')
+                const body = document.createElement('p');
+                body.innerHTML = `"${comment.body}"`;
+                body.classList.add('comment-body')
+                commentElement.appendChild(body);
+                commentElement.appendChild(name);
+                commentElement.appendChild(email);
                 commentsContainer.appendChild(commentElement);
             });
 

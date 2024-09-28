@@ -74,11 +74,11 @@ body {
 /* -----comments------ */
 
 .comments-main {
-    margin: 40px 100px ;
+    margin: 20px 100px;
 }
 
 .preloader {
-    margin: auto;
+    margin: 20px auto;
     width: 50px;
     height: 50px;
     border: 5px solid var(--yt);
@@ -89,15 +89,39 @@ body {
 
 .comments-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0;
+    margin: 0;
     gap: 20px;
 }
 
 .comment {
-    border: 1px solid var(--yt);
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
     padding: 10px;
+    border-radius: 10px;
+    background-color: var(--dark-grey);
+}
+
+.comment:nth-child(5n) {
+    background-color: var(--peach);
+}
+
+.comment:nth-child(5n+2) {
     background-color: transparent;
+    border: solid 1px var(--yt);
+}
+
+.comment p {
+    margin: 0;
+    padding: 0;
+}
+
+.comment p:not(:first-child) {
+    padding-top: 10px;
+    margin-top: auto;
 }
 
 @keyframes spin {
