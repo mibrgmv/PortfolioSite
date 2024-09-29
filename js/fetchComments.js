@@ -10,21 +10,8 @@ function fetchComments() {
         .then(data => {
             preloader.style.display = 'none';
             data.forEach(comment => {
-                const commentElement = document.createElement('div');
-                commentElement.classList.add('comment');
-                const name = document.createElement('p');
-                name.innerHTML = `by ${comment.name}`;
-                name.classList.add('comment-name')
-                const email = document.createElement('p');
-                email.innerHTML = `at ${comment.email}`;
-                email.classList.add('comment-email')
-                const body = document.createElement('p');
-                body.innerHTML = `"${comment.body}"`;
-                body.classList.add('comment-body')
-                commentElement.appendChild(body);
-                commentElement.appendChild(name);
-                commentElement.appendChild(email);
-                commentsContainer.appendChild(commentElement);
+                let html = `<div class="comment"><p>${comment.body}</p><p>by ${comment.name}</p><p>at ${comment.email}</p></div>`
+                preloader.insertAdjacentHTML('afterend', html);
             });
 
             filter = filter > 100 ? 1 : filter + 100;
