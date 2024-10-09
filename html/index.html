@@ -13,7 +13,7 @@
     <header>
         <nav class="nav">
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="todo.html">To-do</a></li>
@@ -47,19 +47,8 @@
                 <li><span id="loadTime"></span></li>
             </ul>
         </div>
-        <script>
-            (function () {
-                const startTime = performance.now();
-
-                window.addEventListener('load', () => {
-                    const endTime = performance.now();
-                    const loadTime = endTime - startTime;
-
-                    const loadTimeElement = document.getElementById('loadTime');
-                    loadTimeElement.textContent = loadTime + 'ms';
-                });
-            })();
-        </script>
     </footer>
 </body>
+<script src="../js/loadtime.js"></script>
+<script src="../js/activePage.js"></script>
 </html>

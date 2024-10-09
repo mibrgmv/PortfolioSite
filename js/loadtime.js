@@ -1,4 +1,11 @@
-// (function() {
-//     const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-//     document.getElementById("loadTime").textContent = loadTime + 'ms';
-// })();
+(function () {
+    const startTime = performance.now();
+
+    window.addEventListener('load', () => {
+        const endTime = performance.now();
+        const loadTime = endTime - startTime;
+
+        const loadTimeElement = document.getElementById('loadTime');
+        loadTimeElement.textContent = loadTime + 'ms';
+    });
+})();
