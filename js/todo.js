@@ -1,4 +1,4 @@
-const inputBox = document.getElementById("input-box")
+const taskForm = document.getElementById('task-form');
 const listContainer = document.getElementById("task-list")
 const taskCount = document.getElementById("task-count");
 const completedCount = document.getElementById("completed-count");
@@ -35,33 +35,35 @@ function updateCounts() {
     completedCount.textContent = completedTasks.length;
 }
 
-function addTask() {
-    if (inputBox.value === '') {
-        showToast('empty task', 'error');
-    } else {
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listContainer.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7"
-        li.appendChild(span);
-    }
-    inputBox.value = "";
-    saveContent();
-    updateCounts();
-}
-
-listContainer.addEventListener("click", function (e) {
-    if (e.target.tagName === "LI") {
+listContainer.addEventListener('click', function (e) {
+    if (e.target.tagName === 'LI') {
         e.target.classList.toggle("crossed");
         saveContent();
         updateCounts();
-    } else if (e.target.tagName === "SPAN") {
+    } else if (e.target.tagName === 'SPAN') {
         e.target.parentElement.remove();
         saveContent();
         updateCounts();
     }
 }, false);
+
+taskForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const inputBox = document.getElementById('input-box');
+    if (inputBox.value === '') {
+        showToast('empty task', 'error');
+    } else {
+        let li = document.createElement('li');
+        li.innerHTML = inputBox.value;
+        listContainer.appendChild(li);
+        let span = document.createElement('span');
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
+    }
+    inputBox.value = "";
+    saveContent();
+    updateCounts();
+});
 
 function saveContent() {
     localStorage.setItem("content", listContainer.innerHTML);
